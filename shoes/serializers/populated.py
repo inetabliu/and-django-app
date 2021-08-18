@@ -1,6 +1,6 @@
-from variant.serializers.common import VariantSerializer
+from variant.serializers.populated import PopulatedVariantSerializer
 from .common import ShoeSerializer
 
 
 class PopulatedShoeSerializer(ShoeSerializer):
-    variants = VariantSerializer(many=True)
+    variants = PopulatedVariantSerializer(many=True)
