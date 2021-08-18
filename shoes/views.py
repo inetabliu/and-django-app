@@ -3,14 +3,15 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Shoe
 from rest_framework.exceptions import NotFound
-from shoes.serializers import ShoeSerializer
+from shoes.serializers.common import ShoeSerializer
+from shoes.serializers.populated import PopulatedShoeSerializer
 
 
 class ShoeListView(APIView):
 
     def get(self, _request):
         shoes = Shoe.objects.all()
-        serialized_shoes = ShoeSerializer(shoes, many=True)
+        serialized_shoes = PopulatedShoeSerializer(shoes, many=True)
         return Response(serialized_shoes.data, status=status.HTTP_200_OK)
 
     def post(self, request):
@@ -32,5 +33,5 @@ class ShoeDetailView(APIView):
 
     def get(self, _request, pk):
         shoes = self.get_shoes(pk=pk)
-        serialized_shoes = ShoeSerializer(shoes)
+        serialized_shoes = PopulatedShoeSerializer(shoes)
         return Response(serialized_shoes.data, status=status.HTTP_200_OK)
