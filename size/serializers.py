@@ -5,4 +5,4 @@ from .models import Size
 class SizeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Size
-        fields = '__all__'
+        fields = ['uk_size', 'eu_size']
