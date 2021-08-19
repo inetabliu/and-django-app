@@ -14,7 +14,7 @@ const App = () => {
       <Navigation />
       <Switch>
         <Route path="/shoes/:id" component={ShoesIndex} />
-        <Route path="/shoes" component={ShoesShow} />
+        <Route path="/" component={ShoesShow} />
 
       </Switch>
 
