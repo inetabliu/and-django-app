@@ -4,6 +4,7 @@ import ShoesShow from './components/ShoesShow.js'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Navigation from './Navigation.js'
 import ShoesIndex from './components/ShoesIndex.js'
+import Footer from './Footer.js'
 
 const App = () => {
 
@@ -15,9 +16,8 @@ const App = () => {
       <Switch>
         <Route path="/shoes/:id" component={ShoesIndex} />
         <Route path="/" component={ShoesShow} />
-
       </Switch>
-
+      <Footer />
     </BrowserRouter>
   )
 

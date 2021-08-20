@@ -13,7 +13,7 @@ const Navigation = () => {
 
     <Navbar className="danger" style={{ marginBottom: '10%' }} collapseOnSelect expand="lg" bg="danger" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">GS Logo</Navbar.Brand>
+        <Navbar.Brand href="/home">GS Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

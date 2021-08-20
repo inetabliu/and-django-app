@@ -4,13 +4,14 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { Container, Button, Accordion } from 'react-bootstrap'
 import ShoeCarousel from './ShoeCarousel'
+import EmailModel from './EmailModal'
 
 
 
 
 
 
-const ShoesIndex = () => {
+const ShoesIndex = ({ toggleShowA }) => {
   const [shoes, setShoes] = useState([])
   const [size, setSize] = useState([])
 
@@ -64,9 +65,9 @@ const ShoesIndex = () => {
               )
             }
           </div>
-          <div>
+          <div style={{ marginBottom: '20%' }}>
             {size.length === 0 ?
-              <Button style={{ width: '100%' }} className="btn btn-primary btn-lg" variant="danger">Notify Me</Button>
+              <EmailModel />
               :
               <Button style={{ width: '100%', marginBottom: '2.5%', marginTop: '2.5%' }} className="btn btn-primary btn-lg" variant="danger">Buy me</Button>
             }
