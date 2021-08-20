@@ -20,55 +20,54 @@ const ShoesShow = () => {
   }, [])
 
   return (
-    <>
-      <Container className="d-flex">
-        <div style={{ width: '30%' }}>
-          <h1>Welcome to Golden Shoe</h1>
-          <Form.Select style={{ marginBottom: '5%' }} aria-label="Select shoe brand">
-            <option>Browse current brands</option>
-            <option value="nike">Nike</option>
-            <option value="adidas">Adidas</option>
-            <option value="vans">Vans</option>
-            <option value="reebok">Reebok</option>
-            <option value="superga">Superga</option>
-          </Form.Select>
-          <div className="container d-flex flex-wrap">
-            {ukSizes.map(el =>
-              <div key={el}>
-                <input type="radio" className="btn-check" name="options" id={el} autoComplete="off" />
-                <label style={{ marginLeft: '5%', marginBottom: '5%' }} className="btn btn-secondary text-nowrap" htmlFor={el}>UK {el}</label>
-              </div>
-            )}
-          </div>
+
+    <Container className="d-flex">
+      <div style={{ width: '30%' }}>
+        <h1 className="text-center">Welcome to Golden Shoe</h1>
+        <Form.Select style={{ marginBottom: '5%', alignItems: 'center' }} aria-label="Select shoe brand">
+          <option>Browse current brands</option>
+          <option value="nike">Nike</option>
+          <option value="adidas">Adidas</option>
+          <option value="vans">Vans</option>
+          <option value="reebok">Reebok</option>
+          <option value="superga">Superga</option>
+        </Form.Select>
+        <div className="container d-flex flex-wrap justify-content-center">
+          {ukSizes.map(el =>
+            <div key={el}>
+              <input type="radio" className="btn-check" name="options" id={el} autoComplete="off" />
+              <label style={{ marginBottom: '5%' }} className="btn btn-secondary text-nowrap" htmlFor={el}>UK {el}</label>
+            </div>
+          )}
         </div>
+      </div>
 
 
 
-        <Container>
-          <Row xs={1} md={2} className="g-4">
-            {shoes.map(el =>
-              <Col key={el.id}>
-                <Card style={{ width: '25rem' }}>
-                  <Card.Img className="img-fluid" style={{ width: '100%', height: '25vh', objectFit: 'cover' }} variant="top" src={`http://localhost:8000${el.picture}`} />
-                  <Card.Body>
-                    <Card.Title style={{ textAlign: 'center' }}>{el.brand}</Card.Title>
-                    <Card.Text>
-                      <strong>Model: </strong> {el.model_name}
-                    </Card.Text>
-                    <Card.Text>
-                      <strong><i className="fas fa-pound-sign"></i> {el.price}</strong>
-                    </Card.Text>
+      <Container>
+        <Row xs={1} md={2} className="g-4">
+          {shoes.map(el =>
+            <Col key={el.id}>
+              <Card style={{ width: '25rem' }}>
+                <Card.Img className="img-fluid" style={{ width: '100%', height: '25vh', objectFit: 'cover' }} variant="top" src={`http://localhost:8000${el.picture}`} />
+                <Card.Body>
+                  <Card.Title style={{ textAlign: 'center' }}>{el.brand}</Card.Title>
+                  <Card.Text>
+                    <strong>Model: </strong> {el.model_name}
+                  </Card.Text>
+                  <Card.Text>
+                    <strong><i className="fas fa-pound-sign"></i> {el.price}</strong>
+                  </Card.Text>
 
-                    <Button variant="danger"> <Link style={{ textDecoration: 'none', color: 'white' }} to={`/shoes/${el.id}`}>View Item</Link></Button>
-                  </Card.Body>
-                </Card >
-              </Col>
-            )}
-          </Row>
-        </Container>
+                  <Button variant="danger"> <Link style={{ textDecoration: 'none', color: 'white' }} to={`/shoes/${el.id}`}>View Item</Link></Button>
+                </Card.Body>
+              </Card >
+            </Col>
+          )}
+        </Row>
       </Container>
+    </Container>
 
-    </>
   )
 }
 

@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { Container, Button, Accordion } from 'react-bootstrap'
-import ShoeCarousel from './ShowCarousel'
+import ShoeCarousel from './ShoeCarousel'
+
 
 
 
@@ -12,6 +13,7 @@ import ShoeCarousel from './ShowCarousel'
 const ShoesIndex = () => {
   const [shoes, setShoes] = useState([])
   const [size, setSize] = useState([])
+
 
   const { id } = useParams()
   console.log('my id', id)
@@ -27,38 +29,37 @@ const ShoesIndex = () => {
     getData()
   }, [id])
 
+
+
+
   return (
-
-
     <Container>
-      <div className="row">
-        <div className="col align-self-start">
+      <div className="row justify-content-center">
+        <div className="col-md-auto">
+          <img style={{ marginTop: '5%', maxWidth: '100%', height: 'auto' }} className="img-fluid" src={`http://localhost:8000${shoes.picture}`} />
           <h1>{shoes.brand} - {shoes.model_name}</h1>
           <h3><i className="fas fa-pound-sign"></i><strong>{shoes.price}</strong></h3>
-          <img style={{ marginTop: '5%' }} className="img-fluid" src={`http://localhost:8000${shoes.picture}`} />
-
 
         </div>
 
-        <div className="col-md-auto">
+        <div style={{ width: '700px' }} className="col-md-auto">
           <div>
-            <p className="fw-bold" style={{ marginLeft: '5%' }}>Select size</p>
-            <small className="text-muted">All sizes are unisex</small>
+            <p className="fw-bold">Select size</p>
           </div>
-          <small>
+          <small className="float-end">
             <a style={{ textDecoration: 'none', color: 'grey' }} href="https://www.sioux-shop.co.uk/cms/shoe-know-how/shoe-size-and-fit/shoe-size-table/" target="_blank" rel="noreferrer">
               Size Guide</a>
           </small>
 
 
-          <div className="w-100" >
+          <div>
             {size.length === 0 ?
               <p className="text-center">No shoes currently in stock</p>
               :
               size.map(el =>
-                <div key={el.id} className="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
-                  <input type="radio" className="btn-check" name="options" id={el.id} autoComplete="off" />
-                  <label style={{ marginLeft: '5%', marginBottom: '5%' }} className="btn btn-secondary text-nowrap" htmlFor={el.id}>UK {el.size.uk_size}</label>
+                <div style={{ marginLeft: '2%' }} key={el.id} className="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+                  <input type="radio" className="btn-check" name="uk_size" id={el.size.uk_size} autoComplete="off" />
+                  <label name="uk_size" className="btn btn-secondary text-nowrap" htmlFor={el.size.uk_size}>UK {el.size.uk_size}</label>
                 </div>
               )
             }
@@ -70,7 +71,7 @@ const ShoesIndex = () => {
               <Button style={{ width: '100%', marginBottom: '2.5%', marginTop: '2.5%' }} className="btn btn-primary btn-lg" variant="danger">Buy me</Button>
             }
 
-            <Accordion defaultActiveKey="0">
+            <Accordion >
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Delivery & Returns</Accordion.Header>
                 <Accordion.Body>
