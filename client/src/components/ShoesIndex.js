@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { Container, Button, Accordion } from 'react-bootstrap'
 import ShoeCarousel from './ShoeCarousel'
 import EmailModel from './EmailModal'
+import BuyToast from './BuyToast'
 
 
 
@@ -12,21 +13,20 @@ import EmailModel from './EmailModal'
 
 
 const ShoesIndex = ({ toggleShowA }) => {
+  //State management for shoes data and size data
   const [shoes, setShoes] = useState([])
   const [size, setSize] = useState([])
-
 
   const { id } = useParams()
   console.log('my id', id)
 
+  //Get shoes data by id
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/shoes/${id}/`)
       setShoes(data)
       setSize(data.variants)
-
     }
-
     getData()
   }, [id])
 
@@ -40,7 +40,6 @@ const ShoesIndex = ({ toggleShowA }) => {
           <img style={{ marginTop: '5%', maxWidth: '100%', height: 'auto' }} className="img-fluid" src={`http://localhost:8000${shoes.picture}`} />
           <h1>{shoes.brand} - {shoes.model_name}</h1>
           <h3><i className="fas fa-pound-sign"></i><strong>{shoes.price}</strong></h3>
-
         </div>
 
         <div style={{ width: '700px' }} className="col-md-auto">
@@ -51,8 +50,6 @@ const ShoesIndex = ({ toggleShowA }) => {
             <a style={{ textDecoration: 'none', color: 'grey' }} href="https://www.sioux-shop.co.uk/cms/shoe-know-how/shoe-size-and-fit/shoe-size-table/" target="_blank" rel="noreferrer">
               Size Guide</a>
           </small>
-
-
           <div>
             {size.length === 0 ?
               <p className="text-center">No shoes currently in stock</p>
@@ -65,13 +62,9 @@ const ShoesIndex = ({ toggleShowA }) => {
               )
             }
           </div>
-          <div style={{ marginBottom: '20%' }}>
-            {size.length === 0 ?
-              <EmailModel />
-              :
-              <Button style={{ width: '100%', marginBottom: '2.5%', marginTop: '2.5%' }} className="btn btn-primary btn-lg" variant="danger">Buy me</Button>
-            }
 
+          <div style={{ marginBottom: '20%' }}>
+            {size.length === 0 ? <EmailModel /> : <BuyToast />}
             <Accordion >
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Delivery & Returns</Accordion.Header>
@@ -99,10 +92,7 @@ const ShoesIndex = ({ toggleShowA }) => {
             </Accordion>
           </div>
         </div>
-
       </div>
-
-
     </Container >
 
 

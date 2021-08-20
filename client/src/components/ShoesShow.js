@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom'
 
 
 const ShoesShow = () => {
-  // eslint-disable-next-line no-unused-vars
+  // Set all shoes state
   const [shoes, setShoesShow] = useState([])
 
+  // Shoe sizes for search by size option
   const ukSizes = [4, 5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13]
 
-
+  //Get all shoes data
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get('/api/shoes/')
@@ -44,7 +45,7 @@ const ShoesShow = () => {
 
 
 
-      <Container>
+      <Container style={{ marginBottom: '10%' }}>
         <Row xs={1} md={2} className="g-4">
           {shoes.map(el =>
             <Col key={el.id}>
@@ -58,7 +59,6 @@ const ShoesShow = () => {
                   <Card.Text>
                     <strong><i className="fas fa-pound-sign"></i> {el.price}</strong>
                   </Card.Text>
-
                   <Button variant="danger"> <Link style={{ textDecoration: 'none', color: 'white' }} to={`/shoes/${el.id}`}>View Item</Link></Button>
                 </Card.Body>
               </Card >

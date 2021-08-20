@@ -33,8 +33,6 @@ const ShoeCarousel = () => {
           </Carousel.Caption>
         </Carousel.Item>
       )}
-
-
     </Carousel>
   )
 }
