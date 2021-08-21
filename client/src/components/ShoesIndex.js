@@ -19,7 +19,8 @@ const ShoesIndex = () => {
   const [shoes, setShoes] = useState([])
 
   const { id } = useParams()
-  console.log('my id', id)
+
+
 
   //Get shoes data by id
   useEffect(() => {
@@ -103,7 +104,7 @@ const ShoesIndex = () => {
         <Col sm={12}>
           <h1 className="text-center">You may also like </h1>
         </Col>
-        {shoes.map(shoe =>
+        {shoes.filter(shoe => shoe.id !== parseInt(id)).map(shoe =>
           <Col key={shoe.id} lg={3} md={12}>
             <ShoesCard shoe={shoe} />
           </Col>

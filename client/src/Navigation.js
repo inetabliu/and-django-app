@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
 
 
-    <Navbar className="danger" style={{ marginBottom: '10%' }} collapseOnSelect expand="lg" bg="danger" variant="dark">
+    <Navbar className="danger" style={{ marginBottom: '5%' }} collapseOnSelect expand="lg" bg="danger" variant="dark">
       <Container>
         <Navbar.Brand href="/home">GS Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
