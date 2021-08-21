@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { Container, Button, Accordion } from 'react-bootstrap'
-import ShoeCarousel from './ShoeCarousel'
 import EmailModel from './EmailModal'
 import BuyToast from './BuyToast'
 

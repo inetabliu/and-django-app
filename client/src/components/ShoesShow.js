@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Card, Button, Row, Col, Container, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import ShoesCard from './ShoesCard'
 
 
 const ShoesShow = () => {
@@ -50,21 +51,9 @@ const ShoesShow = () => {
 
         <Col sm="12" md="8">
           <Row>
-            {filterredShoes.map(el =>
-              <Col key={el.id} lg="6" md="12">
-                <Card style={{ marginBottom: '2rem' }}>
-                  <Card.Img className="img-fluid" style={{ width: '100%', height: '25vh', objectFit: 'cover' }} variant="top" src={`http://localhost:8000${el.picture}`} />
-                  <Card.Body>
-                    <Card.Title style={{ textAlign: 'center' }}>{el.brand}</Card.Title>
-                    <Card.Text>
-                      <strong>Model: </strong> {el.model_name}
-                    </Card.Text>
-                    <Card.Text>
-                      <strong><i className="fas fa-pound-sign"></i> {el.price}</strong>
-                    </Card.Text>
-                    <Button variant="danger"> <Link style={{ textDecoration: 'none', color: 'white' }} to={`/shoes/${el.id}`}>View Item</Link></Button>
-                  </Card.Body>
-                </Card>
+            {filterredShoes.map(shoe =>
+              <Col key={shoe.id} lg="6" md="12">
+                <ShoesCard shoe={shoe} />
               </Col>
             )}
           </Row>
