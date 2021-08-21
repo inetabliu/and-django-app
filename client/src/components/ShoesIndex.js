@@ -11,7 +11,7 @@ import ShoesCard from './ShoesCard'
 const ShoesIndex = () => {
   //State management for shoes data and size data
   const [shoe, setShoe] = useState({})
-  const [size, setSize] = useState([])
+  const [sizes, setSizes] = useState([])
   const [shoes, setShoes] = useState([])
 
   const { id } = useParams()
@@ -24,7 +24,7 @@ const ShoesIndex = () => {
       const { data: shoesData } = await axios.get('/api/shoes/')
       setShoe(shoeData)
       setShoes(shoesData)
-      setSize(shoeData.variants)
+      setSizes(shoeData.variants)
     }
     getData()
   }, [id])
@@ -48,10 +48,10 @@ const ShoesIndex = () => {
               Size Guide</a>
           </small>
           <div>
-            {size.length === 0 ?
+            {sizes.length === 0 ?
               <p className="text-center">No shoes currently in stock</p>
               :
-              size.map(el =>
+              sizes.map(el =>
                 <div style={{ marginLeft: '2%' }} key={el.id} className="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
                   <input type="radio" className="btn-check" name="uk_size" id={el.size.uk_size} autoComplete="off" />
                   <label name="uk_size" className="btn btn-secondary text-nowrap" htmlFor={el.size.uk_size}>UK {el.size.uk_size}</label>
@@ -61,7 +61,7 @@ const ShoesIndex = () => {
           </div>
 
           <div style={{ marginBottom: '20%' }}>
-            {size.length === 0 ? <EmailModel /> : <BuyToast />}
+            {sizes.length === 0 ? <EmailModel /> : <BuyToast />}
             <Accordion >
               <Accordion.Item eventKey="0">
                 <Accordion.Header>Delivery & Returns</Accordion.Header>
