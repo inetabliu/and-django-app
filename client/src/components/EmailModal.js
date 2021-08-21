@@ -3,6 +3,7 @@ import { Modal, Button, Form } from 'react-bootstrap'
 
 
 const EmailModel = () => {
+
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -25,9 +26,6 @@ const EmailModel = () => {
             <Button variant="danger" style={{ width: '100%', marginBottom: '2.5%', marginTop: '2.5%' }} type="submit">Send</Button>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-
-        </Modal.Footer>
       </Modal>
     </>
   )

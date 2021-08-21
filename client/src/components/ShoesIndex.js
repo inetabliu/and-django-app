@@ -21,7 +21,6 @@ const ShoesIndex = () => {
   const { id } = useParams()
 
 
-
   //Get shoes data by id
   useEffect(() => {
     const getData = async () => {
@@ -35,16 +34,14 @@ const ShoesIndex = () => {
   }, [id])
 
 
-
-
   return (
     <Container>
-      <div className="row justify-content-center">
-        <div className="col-md-auto">
+      <Row className="justify-content-center">
+        <Col className="col-md-auto">
           <img style={{ marginTop: '5%', maxWidth: '100%', height: 'auto' }} className="img-fluid" src={`http://localhost:8000${shoe.picture}`} />
           <h1>{shoe.brand} - {shoe.model_name}</h1>
           <h3><i className="fas fa-pound-sign"></i><strong>{shoe.price}</strong></h3>
-        </div>
+        </Col>
 
         <div style={{ width: '700px' }} className="col-md-auto">
           <div>
@@ -96,7 +93,7 @@ const ShoesIndex = () => {
             </Accordion>
           </div>
         </div>
-      </div>
+      </Row>
 
       {/* all shoes */}
       <hr />
