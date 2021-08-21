@@ -51,10 +51,10 @@ const ShoesIndex = () => {
             {sizes.length === 0 ?
               <p className="text-center">No shoes currently in stock</p>
               :
-              sizes.map(el =>
+              sizes.sort((a, b) => a.size.uk_size - b.size.uk_size).map(el =>
                 <div style={{ marginLeft: '2%' }} key={el.id} className="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
                   <input type="radio" className="btn-check" name="uk_size" id={el.size.uk_size} autoComplete="off" />
-                  <label name="uk_size" className="btn btn-secondary text-nowrap" htmlFor={el.size.uk_size}>UK {el.size.uk_size}</label>
+                  <label name="uk_size" className="btn btn-outline-dark text-nowrap" htmlFor={el.size.uk_size}>UK {el.size.uk_size}</label>
                 </div>
               )
             }
