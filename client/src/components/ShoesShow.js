@@ -48,7 +48,6 @@ const ShoesShow = () => {
             )}
           </Form.Select>
         </Col>
-
         <Col sm="12" md="8">
           <Row>
             {filterredShoes.map(shoe =>
@@ -58,10 +57,7 @@ const ShoesShow = () => {
             )}
           </Row>
         </Col>
-
-
       </Row>
-
     </Container >
 
   )

@@ -2,19 +2,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { Container, Button, Accordion } from 'react-bootstrap'
+import { Container, Button, Accordion, Row, Col } from 'react-bootstrap'
 import EmailModel from './EmailModal'
 import BuyToast from './BuyToast'
+import ShoesCard from './ShoesCard'
 
 
 
 
 
 
-const ShoesIndex = ({ toggleShowA }) => {
+const ShoesIndex = () => {
   //State management for shoes data and size data
-  const [shoes, setShoes] = useState([])
+  const [shoe, setShoe] = useState({})
   const [size, setSize] = useState([])
+  const [shoes, setShoes] = useState([])
 
   const { id } = useParams()
   console.log('my id', id)
@@ -22,9 +24,11 @@ const ShoesIndex = ({ toggleShowA }) => {
   //Get shoes data by id
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/shoes/${id}/`)
-      setShoes(data)
-      setSize(data.variants)
+      const { data: shoeData } = await axios.get(`/api/shoes/${id}/`)
+      const { data: shoesData } = await axios.get('/api/shoes/')
+      setShoe(shoeData)
+      setShoes(shoesData)
+      setSize(shoeData.variants)
     }
     getData()
   }, [id])
@@ -36,9 +40,9 @@ const ShoesIndex = ({ toggleShowA }) => {
     <Container>
       <div className="row justify-content-center">
         <div className="col-md-auto">
-          <img style={{ marginTop: '5%', maxWidth: '100%', height: 'auto' }} className="img-fluid" src={`http://localhost:8000${shoes.picture}`} />
-          <h1>{shoes.brand} - {shoes.model_name}</h1>
-          <h3><i className="fas fa-pound-sign"></i><strong>{shoes.price}</strong></h3>
+          <img style={{ marginTop: '5%', maxWidth: '100%', height: 'auto' }} className="img-fluid" src={`http://localhost:8000${shoe.picture}`} />
+          <h1>{shoe.brand} - {shoe.model_name}</h1>
+          <h3><i className="fas fa-pound-sign"></i><strong>{shoe.price}</strong></h3>
         </div>
 
         <div style={{ width: '700px' }} className="col-md-auto">
@@ -92,6 +96,19 @@ const ShoesIndex = ({ toggleShowA }) => {
           </div>
         </div>
       </div>
+
+      {/* all shoes */}
+      <hr />
+      <Row>
+        <Col sm={12}>
+          <h1 className="text-center">You may also like </h1>
+        </Col>
+        {shoes.map(shoe =>
+          <Col key={shoe.id} lg={3} md={12}>
+            <ShoesCard shoe={shoe} />
+          </Col>
+        )}
+      </Row>
     </Container >
 
 
