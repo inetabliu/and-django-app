@@ -91,10 +91,9 @@ const ShoesIndex = () => {
         </div>
       </Row>
 
-      <hr />
-      <Row>
+      <Row style={{ padding: '2rem', margin: '2rem 0 2rem 0' }} className="bg-light border-top">
         <Col sm={12}>
-          <h1 className="text-center">You may also like </h1>
+          <h1 style={{ marginBottom: '2rem' }}>You may also like </h1>
         </Col>
         {shoes.filter(shoe => shoe.id !== parseInt(id)).map(shoe =>
           <Col key={shoe.id} lg={3} md={12}>
