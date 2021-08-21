@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Card, Button, Row, Col, Container, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Row, Col, Container, Form } from 'react-bootstrap'
 import ShoesCard from './ShoesCard'
 
 
@@ -12,22 +11,18 @@ const ShoesShow = () => {
   const [filterredShoes, setFilteredShoes] = useState([])
 
 
-
   //Get all shoes data
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get('/api/shoes/')
       setShoes(data)
       setFilteredShoes(data)
-      console.log('my data', data)
-
     }
     getData()
   }, [])
 
 
   const handleBrandChange = (event) => {
-    console.log('it changing', event.target.value)
     if (event.target.value === 'none') {
       setFilteredShoes(shoes)
       return

@@ -7,8 +7,6 @@ import ShoesIndex from './components/ShoesIndex.js'
 import Footer from './Footer.js'
 
 const App = () => {
-
-
   return (
 
     <BrowserRouter>
@@ -20,11 +18,6 @@ const App = () => {
       <Footer />
     </BrowserRouter>
   )
-
-
-
-
-
 }
 
 export default App

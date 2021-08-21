@@ -3,7 +3,6 @@ import { Modal, Button, Form } from 'react-bootstrap'
 
 
 const EmailModel = () => {
-
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)

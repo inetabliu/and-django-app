@@ -8,10 +8,6 @@ import BuyToast from './BuyToast'
 import ShoesCard from './ShoesCard'
 
 
-
-
-
-
 const ShoesIndex = () => {
   //State management for shoes data and size data
   const [shoe, setShoe] = useState({})
@@ -95,7 +91,6 @@ const ShoesIndex = () => {
         </div>
       </Row>
 
-      {/* all shoes */}
       <hr />
       <Row>
         <Col sm={12}>
@@ -108,7 +103,6 @@ const ShoesIndex = () => {
         )}
       </Row>
     </Container >
-
 
 
   )

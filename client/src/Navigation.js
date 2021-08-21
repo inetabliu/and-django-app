@@ -4,10 +4,6 @@ import BasketModal from './components/BasketModal'
 
 
 const Navigation = () => {
-
-
-
-
   return (
 
 
@@ -27,7 +23,6 @@ const Navigation = () => {
 
 
     </Navbar>
-
 
 
   )

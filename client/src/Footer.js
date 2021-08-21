@@ -2,10 +2,7 @@ import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 
 
-
 const Footer = () => {
-
-
   return (
     <Navbar collapseOnSelect expand="lg" bg="danger" variant="dark">
       <Container className="justify-content-center" >

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Row, Col, Toast, Button, ToastContainer } from 'react-bootstrap'
 
 const BuyToast = () => {
-
   const [show, setShow] = useState(false)
 
   return (

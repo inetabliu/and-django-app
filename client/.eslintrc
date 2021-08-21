@@ -25,6 +25,11 @@
   },
   "rules": {
     "brace-style": "error",
+    "no-multiple-empty-lines": "error",
+    "padded-blocks": [
+      "error",
+      "never"
+    ],
     "camelcase": [
       "error",
       {
@@ -65,7 +70,7 @@
         "beforeColon": false
       }
     ],
-    "no-console": "off",
+    "no-console": "error",
     "no-fallthrough": "warn",
     "prefer-const": "error",
     "quotes": [

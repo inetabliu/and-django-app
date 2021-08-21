@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 
 const ShoesCard = ({ shoe }) => {
-
   return (
     <Card style={{ marginBottom: '2rem' }}>
       <Card.Img className="img-fluid" style={{ width: '100%', height: '25vh', objectFit: 'cover' }} variant="top" src={`http://localhost:8000${shoe.picture}`} />
