@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
@@ -15,7 +15,7 @@ const ShoesCard = ({ shoe }) => {
         <Card.Text>
           <strong><i className="fas fa-pound-sign"></i> {shoe.price}</strong>
         </Card.Text>
-        <Button variant="danger"> <Link style={{ textDecoration: 'none', color: 'white' }} to={`/shoes/${shoe.id}`}>View Item</Link></Button>
+        <Link className="btn btn-danger" style={{ textDecoration: 'none', color: 'white' }} to={`/shoes/${shoe.id}`}>View Item</Link>
       </Card.Body>
     </Card>
   )
