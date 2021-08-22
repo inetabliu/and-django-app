@@ -1,0 +1,52 @@
+[
+{
+  "model": "shoes.shoe",
+  "pk": 1,
+  "fields": {
+    "brand": "Nike",
+    "model_name": "Classic",
+    "picture": "images/Nike-Waffle-Trainer-2-Black-White-DH1349-001-1.jpeg",
+    "price": 40.59
+  }
+},
+{
+  "model": "shoes.shoe",
+  "pk": 2,
+  "fields": {
+    "brand": "Adidas",
+    "model_name": "Rogue",
+    "picture": "images/Rouge_Shoes_Red_H01797_01_standard_adobespark.jpeg",
+    "price": 50.99
+  }
+},
+{
+  "model": "shoes.shoe",
+  "pk": 3,
+  "fields": {
+    "brand": "Vans",
+    "model_name": "Old School",
+    "picture": "images/VN000D3HY28-HERO.webp",
+    "price": 35.99
+  }
+},
+{
+  "model": "shoes.shoe",
+  "pk": 4,
+  "fields": {
+    "brand": "Reebok",
+    "model_name": "Retro",
+    "picture": "images/Classic_Leather_Shoes_White_GY2619_01_standard_adobespark_fE2BfNC.jpeg",
+    "price": 42.99
+  }
+},
+{
+  "model": "shoes.shoe",
+  "pk": 5,
+  "fields": {
+    "brand": "Superga",
+    "model_name": "2750 Classic",
+    "picture": "images/superga_superga_2750cotuclassic.jpeg",
+    "price": 39.99
+  }
+}
+]

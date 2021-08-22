@@ -1,0 +1,106 @@
+[
+{
+  "model": "size.size",
+  "pk": 1,
+  "fields": {
+    "uk_size": 6.5,
+    "eu_size": 40
+  }
+},
+{
+  "model": "size.size",
+  "pk": 2,
+  "fields": {
+    "uk_size": 5.5,
+    "eu_size": 39
+  }
+},
+{
+  "model": "size.size",
+  "pk": 3,
+  "fields": {
+    "uk_size": 2.0,
+    "eu_size": 35
+  }
+},
+{
+  "model": "size.size",
+  "pk": 4,
+  "fields": {
+    "uk_size": 3.0,
+    "eu_size": 36
+  }
+},
+{
+  "model": "size.size",
+  "pk": 5,
+  "fields": {
+    "uk_size": 4.0,
+    "eu_size": 37
+  }
+},
+{
+  "model": "size.size",
+  "pk": 6,
+  "fields": {
+    "uk_size": 5.0,
+    "eu_size": 38
+  }
+},
+{
+  "model": "size.size",
+  "pk": 7,
+  "fields": {
+    "uk_size": 7.0,
+    "eu_size": 41
+  }
+},
+{
+  "model": "size.size",
+  "pk": 8,
+  "fields": {
+    "uk_size": 8.0,
+    "eu_size": 42
+  }
+},
+{
+  "model": "size.size",
+  "pk": 9,
+  "fields": {
+    "uk_size": 9.0,
+    "eu_size": 43
+  }
+},
+{
+  "model": "size.size",
+  "pk": 10,
+  "fields": {
+    "uk_size": 9.5,
+    "eu_size": 44
+  }
+},
+{
+  "model": "size.size",
+  "pk": 11,
+  "fields": {
+    "uk_size": 12.0,
+    "eu_size": 47
+  }
+},
+{
+  "model": "size.size",
+  "pk": 12,
+  "fields": {
+    "uk_size": 10.0,
+    "eu_size": 45
+  }
+},
+{
+  "model": "size.size",
+  "pk": 13,
+  "fields": {
+    "uk_size": 11.0,
+    "eu_size": 46
+  }
+}
+]

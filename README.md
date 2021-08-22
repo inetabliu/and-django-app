@@ -15,6 +15,9 @@ To start the backend, run:
 pipenv install
 pypenv shell
 python manage.py migrate
+python manage.py loaddata shoes/seeds.json
+python manage.py loaddata size/seeds.json
+python manage.py loaddata variant/seeds.json
 python manage.py createsuperuser
 python manage.py runserver
 ```

@@ -1,0 +1,56 @@
+[
+{
+  "model": "variant.variant",
+  "pk": 12,
+  "fields": {
+    "quantity": 10,
+    "size": 2,
+    "shoe": 1
+  }
+},
+{
+  "model": "variant.variant",
+  "pk": 13,
+  "fields": {
+    "quantity": 10,
+    "size": 2,
+    "shoe": 3
+  }
+},
+{
+  "model": "variant.variant",
+  "pk": 14,
+  "fields": {
+    "quantity": 5,
+    "size": 7,
+    "shoe": 3
+  }
+},
+{
+  "model": "variant.variant",
+  "pk": 16,
+  "fields": {
+    "quantity": 3,
+    "size": 6,
+    "shoe": 1
+  }
+},
+{
+  "model": "variant.variant",
+  "pk": 17,
+  "fields": {
+    "quantity": 3,
+    "size": 5,
+    "shoe": 1
+  }
+},
+{
+  "model": "variant.variant",
+  "pk": 18,
+  "fields": {
+    "quantity": 5,
+    "size": 10,
+    "shoe": 1
+  }
+}
+]
