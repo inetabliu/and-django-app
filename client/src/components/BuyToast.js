@@ -11,7 +11,7 @@ const BuyToast = () => {
           <Toast.Header>
             <strong className="me-auto">Success</strong>
           </Toast.Header>
-          <Toast.Body>Your item has been sucessfully added to your basket</Toast.Body>
+          <Toast.Body>Your item has been successfully added to your basket</Toast.Body>
         </Toast>
       </ToastContainer>
       <Col>
